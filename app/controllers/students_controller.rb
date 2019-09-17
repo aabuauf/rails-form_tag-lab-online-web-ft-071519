@@ -1,3 +1,5 @@
+require 'pry'
+
 class StudentsController < ApplicationController
   
   def index
@@ -12,7 +14,8 @@ class StudentsController < ApplicationController
   end
   
   def create
-    Post.create(title: params[:post][:title], description: params[:post][:description])
+    binding.pry
+    Student.create(title: params[:post][:title], description: params[:post][:description])
     redirect_to posts_path
   end
 end
